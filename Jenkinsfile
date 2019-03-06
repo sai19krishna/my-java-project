@@ -10,7 +10,7 @@ pipeline {
   
   post { 
     always  {
-        archiveArtifacts artifacts: 'junit-4.10.jar',fingerprint: true
+        archive 'junit-4.10/*.jar'
     }
   }
 }
