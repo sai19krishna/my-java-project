@@ -12,5 +12,15 @@ pipeline {
         sh 'ant -f build.xml -v'
       }
     }
+    stage('deploy'){
+      steps{
+        sh "cp dist/junit-4.10_${env.BUILD_NUMBER}.jar /var/www/html/rectangles/all/"
+  }
+}
+    post {
+      always {
+        archiveArtifacts artifacts: 'dist/*.jar' ,fingerprint: true
+      }
+    }
   }
 }
