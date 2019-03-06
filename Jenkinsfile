@@ -17,10 +17,7 @@ pipeline {
         sh "cp dist/junit-4.10_${env.BUILD_NUMBER}.jar /var/www/html/rectangles/all/"
   }
 }
-    post {
-      always {
-        archiveArtifacts artifacts: 'dist/*.jar' ,fingerprint: true
+   
       }
     }
-  }
-}
+
