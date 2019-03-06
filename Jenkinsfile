@@ -10,7 +10,7 @@ pipeline {
   
   post { 
     always  {
-        archive 'dist/*.jar'
+        archive 'junit-4.10/*.jar'
     }
   }
 }
