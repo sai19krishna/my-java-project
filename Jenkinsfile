@@ -1,5 +1,6 @@
 pipeline {
   agent any
+      label 'master'
     stages{
     stage('Unit Tests') {
       steps {
@@ -14,7 +15,7 @@ pipeline {
           }
      stage('deploy') {
         steps {
-           sh "cp dist/*.jar${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar /var/www/html/all/${env.BRANCH_NAME}/"
+            sh "cp dist/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar /var/www/html/rectangles/all/${env.BRANCH_NAME}/"
          }
       }
         }
