@@ -13,15 +13,9 @@ pipeline {
       }
     }
      post {
-        success {
+        always {
           archiveArtifacts artifacts: 'dist/*.jar', fingerprint: true
         }
       }
     }
-    stage('deploy') {
-      steps {
-        sh "cp dist/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar /var/www/html/rectangles/all/${env.BRANCH_NAME}/"
-      }
-    }
-  }
-
+}
