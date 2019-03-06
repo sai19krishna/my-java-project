@@ -14,7 +14,7 @@ pipeline {
     }
     stage('deploy'){
       steps{
-        sh "cp dist/junit-4.10_${env.BUILD_NUMBER}.jar /var/www/html/rectangles/all/"
+        sh "scp dist/recantgle_${env.BUILD_NUMBER}.jar /var/www/html/rectangles/all/"
   }
 }
    
